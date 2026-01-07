@@ -53,8 +53,14 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
+      - name: Debug - Check Config
+        run: cat next.config.mjs || cat next.config.js || echo "No config file found"
+
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
+
+      - name: Debug - List Output
+        run: ls -al && ls -al .next || echo "No .next dir" && ls -al out || echo "No out dir"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
