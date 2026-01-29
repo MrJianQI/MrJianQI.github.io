@@ -49,3 +49,4 @@
 34. [x] 适配静态导出：移除博客列表页的 force-dynamic 配置，确保全站兼容 output: export 模式
 35. [!] 重要开发提示：当前上传功能接口存放在 'src/app/api/_upload'。本地开发如需使用上传功能，请暂时去掉下划线重命名为 'upload'；执行 'npm run build' 静态构建前，务必确保其带有下划线前缀以避免构建错误
 36. [x] 实现自动化部署流水线：创建 GitHub Actions 工作流配置文件，支持将全站源代码托管于 GitHub 的同时，自动构建并发布至 GitHub Pages，简化发布流程并确保源码安全
+37. [x] 解决配置冲突问题：将 'next.config.mjs' 整合并标准化为 'next.config.js' (CommonJS 格式)，确保 'output: export' 配置被 GitHub Actions 构建环境正确识别，解决 'out' 目录缺失导致的部署失败问题
